@@ -1,33 +1,106 @@
 function Footer() {
   try {
+    const services = [
+      { title: 'Project Management', idx: 0 },
+      { title: 'Construction Management', idx: 1 },
+      { title: 'Interior Designing', idx: 2 },
+      { title: 'Architecture Design', idx: 3 },
+      { title: 'Licensing', idx: 4 },
+      { title: 'Structural Design', idx: 5 }
+    ];
+
+    const authorities = ['BMC', 'MCGM', 'MHADA', 'SRA', 'CIDCO'];
+
+    const linkClass = "block text-gray-600 hover:text-[var(--secondary-color)] transition-all duration-300 hover:translate-x-1 text-sm";
+
     return (
-      <footer className="bg-[var(--background-third)] text-white py-12" data-name="footer" data-file="components/Footer.js">
-        <div className="mx-auto px-4 sm:px-6 lg:px-36">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <img src="assets/radius-logo.png" alt="Radius Architects & Associates" className="h-16 mb-4" />
-              <p className="text-gray-800 text-base">India's trusted partner for multi-authority licensing and DCPR 2034 compliance.</p>
-            </div>
-            <div>
-              <h3 className="text-2xl text-[var(--primary-color)] font-bold mb-4">Quick Links</h3>
-              <div className="space-y-2 text-sm">
-                <a href="#home" className="block text-gray-800 hover:text-[var(--secondary-color)] transition-all duration-300 hover:translate-x-1">Home</a>
-                <a href="services.html" className="block text-gray-800 hover:text-[var(--secondary-color)] transition-all duration-300 hover:translate-x-1">Services</a>
-                <a href="projects.html" className="block text-gray-800 hover:text-[var(--secondary-color)] transition-all duration-300 hover:translate-x-1">Projects</a>
-                <a href="team.html" className="block text-gray-800 hover:text-[var(--secondary-color)] transition-all duration-300 hover:translate-x-1">Our Team</a>
+      <footer className="bg-[var(--background-third)]" data-name="footer" data-file="components/Footer.js">
+
+        {/* Main Footer Content */}
+        <div className="mx-auto px-4 sm:px-6 lg:px-36 pt-12 pb-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+            {/* Column 1: Brand + Authorities */}
+            <div className="lg:col-span-1">
+              <img src="assets/radius-logo.png" alt="Radius Architects & Associates" className="h-14 mb-4" />
+              <p className="text-gray-600 text-sm mb-5 leading-relaxed">India's trusted partner for multi-authority licensing and DCPR 2034 compliance.</p>
+              <h4 className="text-sm font-bold text-[var(--primary-color)] uppercase tracking-wider mb-3">Authorities We Work With</h4>
+              <div className="flex flex-wrap gap-2">
+                {authorities.map((auth, idx) => (
+                  <span key={idx} className="px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-semibold text-[var(--primary-color)] shadow-sm hover:bg-[var(--primary-color)] hover:text-white transition-all duration-300 cursor-default">
+                    {auth}
+                  </span>
+                ))}
               </div>
             </div>
+
+            {/* Column 2: Quick Links */}
             <div>
-              <h3 className="text-2xl text-[var(--primary-color)] font-bold mb-4">Contact</h3>
-              <p className="text-gray-800 text-sm mb-2">Address: F-103, Shyam Kamal-C Bldg., Agarwal Mkt, Above Sahakari Bhandar, M.G.Road, Vile Parle(E), Mumbai- 400 057</p>
-              <p className="text-gray-800 text-sm">Phone: +91 22 1234 5678</p>
+              <h3 className="text-lg text-[var(--primary-color)] font-bold mb-4">Quick Links</h3>
+              <div className="space-y-2.5">
+                <a href="#home" className={linkClass}>Home</a>
+                <a href="services.html" className={linkClass}>Services</a>
+                <a href="projects.html" className={linkClass}>Projects</a>
+                <a href="team.html" className={linkClass}>Our Team</a>
+                <a href="#contact" className={linkClass}>Contact Us</a>
+              </div>
+            </div>
+
+            {/* Column 3: Services */}
+            <div>
+              <h3 className="text-lg text-[var(--primary-color)] font-bold mb-4">Our Services</h3>
+              <div className="space-y-2.5">
+                {services.map((service) => (
+                  <a key={service.idx} href={`services.html?service=${service.idx}`} className={linkClass}>
+                    {service.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Column 4: Find Us */}
+            <div>
+              <h3 className="text-lg text-[var(--primary-color)] font-bold mb-4">Find Us</h3>
+              <div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm mb-3">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.1544715441323!2d72.84320257612414!3d19.100878151189264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9b420d025dd%3A0xadc7429aa5547855!2sShyam%20Kamal%20C%20Bldg%2C%2027%2C%20Tejpal%20Rd%2C%20near%20Manoj%20Ornaments%20Private%20Limited%2C%20Agarwal%20Market%2C%20Park%20Road%2C%20Vile%20Parle%2C%20Mumbai%2C%20Maharashtra%20400057!5e0!3m2!1sen!2sin!4v1771772513337!5m2!1sen!2sin"
+                  width="100%"
+                  height="180"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Radius Architects Office Location"
+                ></iframe>
+              </div>
+              <a
+                href="https://www.google.com/maps/dir//Vile+Parle+East,+Mumbai,+Maharashtra"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary-color)] hover:text-[var(--secondary-color)] transition-colors duration-300"
+              >
+                <span className="icon-navigation text-base!"></span>
+                Get Directions
+              </a>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-base text-gray-400">
-            <p>
-              &copy; 2026 <span className="text-[var(--primary-color)]">Radius Architects & Associates</span>. All rights reserved. Designed by
-              <a href="https://infinitysquaredtech.com" className="text-[var(--primary-color)]"> Infinity Squared Technologies</a>
-            </p>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-200 pt-6">
+            <div className="flex flex-col md:flex-row justify-center items-center text-center gap-2">
+              <p className="text-base text-gray-500">
+                &copy; 2026 <span className="text-[var(--primary-color)] font-semibold">Radius Architects & Associates</span>. All rights reserved.
+              </p>
+              {/* <div className="flex items-center gap-4 text-sm text-gray-500">
+                <a href="#" className="hover:text-[var(--primary-color)] transition-colors duration-300">Privacy Policy</a>
+                <span className="text-gray-300">|</span>
+                <a href="#" className="hover:text-[var(--primary-color)] transition-colors duration-300">Terms of Service</a>
+                <span className="text-gray-300">|</span>
+                <a href="#" className="hover:text-[var(--primary-color)] transition-colors duration-300">Sitemap</a>
+              </div> */}
+              <p className="text-base text-gray-500">
+                Designed by <a href="https://infinitysquaredtech.com" className="text-[var(--primary-color)] font-semibold hover:underline">Infinity Squared Technologies</a>
+              </p>
+            </div>
           </div>
         </div>
       </footer>
