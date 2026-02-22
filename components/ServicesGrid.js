@@ -18,7 +18,7 @@ function ServicesGrid() {
             {services.map((service, idx) => (
               <a key={idx} href={`services.html?service=${idx}`} className="bg-[var(--background-third)] p-8 rounded-lg shadow-sm flex flex-col justify-center items-center text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group block">
                 <div className="w-20 h-20 rounded-xl flex items-center justify-center mb-4 bg-[var(--background-secondary)] bg-opacity-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                  <div className={`${service.icon} text-4xl text-[var(--background)]`}></div>
+                  <div className={`${service.icon} text-4xl! text-[var(--background)]`}></div>
                 </div>
                 <h3 className="text-2xl mb-3 text-[var(--primary-color)]">{service.title}</h3>
                 <p className="text-[var(--text-secondary)] text-lg leading-relaxed">{service.desc}</p>

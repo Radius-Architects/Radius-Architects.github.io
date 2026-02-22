@@ -83,14 +83,14 @@ function ServicesPage() {
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-color)] via-[#0d3d5f] to-[var(--primary-color)] opacity-65"></div>
           </div>
           <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-36 text-center">
-            <div className={`${service.icon} text-6xl mb-6`}></div>
+            <div className={`${service.icon} text-6xl! mb-6`}></div>
             <h1 className="text-5xl mb-6">{service.title}</h1>
             <p className="text-xl text-gray-200">{service.desc}</p>
           </div>
         </section>
 
         <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4">
+          <div className="max-w-6xl mx-auto px-4">
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed text-center">
               {service.content}
             </p>
@@ -105,7 +105,7 @@ function ServicesPage() {
             <div className="grid md:grid-cols-2 gap-x-16 gap-y-6">
               {service.features.map((feature, idx) => (
                 <div key={idx} className="flex items-center space-x-3 transition-all duration-300 hover:translate-x-2">
-                  <div className="icon-circle-check text-2xl text-green-600 transition-transform duration-300 hover:scale-125"></div>
+                  <div className="icon-circle-check text-2xl! text-green-600 transition-transform duration-300 hover:scale-125"></div>
                   <span className="text-lg">{feature}</span>
                 </div>
               ))}
@@ -116,7 +116,7 @@ function ServicesPage() {
         <section className="py-12 bg-[var(--background-third)] bg-opacity-10">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <div className="flex items-center justify-center space-x-4 mb-4">
-              <div className="icon-award text-4xl text-[var(--primary-color)]"></div>
+              <div className="icon-award text-4xl! text-[var(--primary-color)]"></div>
               <h2 className="text-2xl text-[var(--primary-color)]">In-house Team of Senior Architects</h2>
             </div>
             <p className="text-lg text-[var(--text-secondary)]">25+ years experience with MCGM/MHADA Empanelling</p>
@@ -127,11 +127,11 @@ function ServicesPage() {
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-3xl text-[var(--primary-color)] mb-8 text-center">Why Choose Us?</h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-6 bg-gray-50 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:bg-white">
+              <div className="p-6 bg-gray-50 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:bg-[var(--background-third)]">
                 <h3 className="text-xl font-bold mb-3 text-[var(--primary-color)]">22+ Professional Staff</h3>
                 <p className="text-[var(--text-secondary)]">Dedicated team with MCGM/MHADA empanelling and extensive regulatory experience</p>
               </div>
-              <div className="p-6 bg-gray-50 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:bg-white">
+              <div className="p-6 bg-gray-50 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:bg-[var(--background-third)]">
                 <h3 className="text-xl font-bold mb-3 text-[var(--primary-color)]">DCPR 2034 Certified</h3>
                 <p className="text-[var(--text-secondary)]">Complete compliance expertise for latest development control regulations</p>
               </div>
