@@ -1,0 +1,33 @@
+{
+    "name": "radius-architects-website",
+    "version": "0.1.0",
+    "description": "The website for Radius Architects",
+    "scripts": {
+        "build:app": "npx babel app.js --out-file lib/app.min.js --minified --presets @babel/preset-env,@babel/preset-react",
+        "build:components": "npx babel components --out-dir lib/components --minified --presets @babel/preset-env,@babel/preset-react",
+        "build:pages": "npx babel pages --out-dir lib/pages --minified --presets @babel/preset-env,@babel/preset-react",
+        "build:tailwind": "npx tailwindcss -o lib/styles/tailwind.min.css --minify",
+        "build:styles": "npx @tailwindcss/cli -i main.css -o lib/styles/main.min.css --minify",
+        "build": "npm-run-all --parallel build:app build:components build:pages build:tailwind build:styles",
+        "clean": "rm -rf lib",
+        "watch:app": "npx babel app.js --out-file lib/app.min.js --minified --watch --presets @babel/preset-env,@babel/preset-react",
+        "watch:components": "npx babel components --out-dir lib/components --minified --watch --presets @babel/preset-env,@babel/preset-react",
+        "watch:pages": "npx babel pages --out-dir lib/pages --minified --watch --presets @babel/preset-env,@babel/preset-react",
+        "watch:tailwind": "npx tailwindcss -o lib/styles/tailwind.min.css --minify --watch",
+        "watch:styles": "npx @tailwindcss/cli -i main.css -o lib/styles/main.min.css --minify --watch",
+        "watch": "npm-run-all --parallel watch:app watch:components watch:pages watch:tailwind watch:styles"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.28.3",
+        "@babel/core": "^7.28.4",
+        "@babel/plugin-syntax-jsx": "^7.27.1",
+        "@babel/preset-env": "^7.28.3",
+        "@babel/preset-react": "^7.27.1",
+        "@tailwindcss/cli": "^4.1.12",
+        "baseline-browser-mapping": "^2.9.11",
+        "cssnano": "^7.1.2",
+        "npm-run-all": "^1.1.3",
+        "postcss": "^8.4.38",
+        "postcss-cli": "^10.1.0"
+    }
+}

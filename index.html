@@ -13,56 +13,20 @@
 
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="lib/styles/tailwind.min.css" rel="stylesheet">
+    <link href="lib/styles/main.min.css" rel="stylesheet">
     <link href="https://unpkg.com/lucide-static@latest/font/lucide.css" rel="stylesheet">
-
-    <style type="text/tailwindcss">
-    @layer theme {
-        :root {
-            --primary-color: #29438D;
-            --secondary-color: #009946;
-            --text-primary: #000000;
-            --text-secondary: #666666;
-            --background: #ffffff;
-            --background-secondary: #039545;
-            --background-third: #EDF1FF;
-            --border-color: #e5e7eb;
-        }
-    }
-
-    @layer base {
-        body {
-            @apply font-['Lato',sans-serif] text-[var(--text-primary)] bg-[var(--background)];
-        }
-        h1, h2, h3, h4, h5, h6 {
-            @apply font-['Montserrat',sans-serif] font-bold;
-        }
-    }
-
-    @layer utilities {
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-        .transition-all-300 {
-            transition: all 300ms ease-in-out;
-        }
-        .transition-transform-300 {
-            transition: transform 300ms ease-in-out;
-        }
-    }
-    </style>
 </head>
 <body>
     <div id="root"></div>
-    <script type="text/babel" src="components/Header.js"></script>
-    <script type="text/babel" src="components/Hero.js"></script>
-    <script type="text/babel" src="components/ClientsServed.js"></script>
-    <script type="text/babel" src="components/AboutSection.js"></script>
-    <script type="text/babel" src="components/ServicesGrid.js"></script>
-    <script type="text/babel" src="components/Testimonials.js"></script>
-    <script type="text/babel" src="components/ContactForm.js"></script>
-    <script type="text/babel" src="components/Footer.js"></script>
-    <script type="text/babel" src="app.js"></script>
+    <script src="lib/components/Header.js"></script>
+    <script src="lib/components/Hero.js"></script>
+    <script src="lib/components/ClientsServed.js"></script>
+    <script src="lib/components/AboutSection.js"></script>
+    <script src="lib/components/ServicesGrid.js"></script>
+    <script src="lib/components/Testimonials.js"></script>
+    <script src="lib/components/ContactForm.js"></script>
+    <script src="lib/components/Footer.js"></script>
+    <script src="lib/app.min.js"></script>
 </body>
 </html>
