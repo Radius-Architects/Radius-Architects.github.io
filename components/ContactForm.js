@@ -235,7 +235,7 @@ function ContactForm() {
                   {/* Submit */}
                   <button
                     type="submit"
-                    className="w-full py-4 bg-[var(--primary-color)] text-white font-bold rounded-xl hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px] active:translate-y-[0px] active:shadow-md flex items-center justify-center space-x-2 group"
+                    className="w-full py-4 bg-[var(--primary-color)] text-white font-bold rounded-xl hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px] active:translate-y-[0px] active:shadow-md flex items-center justify-center space-x-2 group hover:bg-[var(--secondary-color)] hover:text-[var(--text-primary)]"
                   >
                     <span>Send Message</span>
                     <div className="icon-send text-sm transition-transform duration-300 group-hover:translate-x-1"></div>
