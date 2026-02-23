@@ -18,6 +18,17 @@ function Hero() {
             Get Licensing Consultation
           </a>
         </div>
+
+        {/* modern scroll indicator */}
+        <div className="absolute inset-x-0 bottom-8 flex justify-center z-20">
+          <a href="#clients" className="flex flex-col items-center text-white">
+            <span className="w-8 h-12 border-2 border-white rounded-full flex justify-center items-start p-1">
+              <span className="w-3 h-3 bg-white rounded-full mb-1 animate-bounce"></span>
+            </span>
+            <span className="mt-2 text-sm uppercase tracking-wider">scroll</span>
+            <span className="sr-only">Scroll Down</span>
+          </a>
+        </div>
       </section>
     );
   } catch (error) {
