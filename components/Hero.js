@@ -3,7 +3,7 @@ function Hero() {
     return (
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden" data-name="hero" data-file="components/Hero.js">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0">
-          <source src="https://tech-triq.com/video/home-video.mp4" type="video/mp4" />
+          <source src="assets/landing_page_video.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-color)] via-[#0d3d5f] to-[var(--primary-color)] opacity-45 z-10"></div>
         
