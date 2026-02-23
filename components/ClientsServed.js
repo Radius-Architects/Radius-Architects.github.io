@@ -38,7 +38,7 @@ function ClientsServed() {
           <div className="mb-8 overflow-hidden">
             <div className="flex animate-scroll space-x-8">
               {[...clientLogos1, ...clientLogos1].map((client, idx) => (
-                <div key={idx} className="flex-shrink-0 bg-white rounded-lg min-w-[200px] h-28 flex items-center justify-center p-4 shadow-sm">
+                <div key={idx} className="flex-shrink-0 bg-white rounded-lg min-w-[200px] max-w-[200px] h-28 flex items-center justify-center p-2 shadow-sm">
                   <img src={client.image} alt={client.name} className="max-w-full max-h-full object-contain" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} loading="lazy" />
                   <span className="text-lg font-bold text-[var(--primary-color)] hidden">{client.name}</span>
                 </div>
@@ -49,7 +49,7 @@ function ClientsServed() {
           <div className="mb-8 overflow-hidden">
             <div className="flex animate-scroll-reverse space-x-8">
               {[...clientLogos2, ...clientLogos2].map((client, idx) => (
-                <div key={idx} className="flex-shrink-0 bg-white rounded-lg min-w-[200px] h-28 flex items-center justify-center p-4 shadow-sm">
+                <div key={idx} className="flex-shrink-0 bg-white rounded-lg min-w-[200px] max-w-[200px] h-28 flex items-center justify-center p-4 shadow-sm">
                   <img src={client.image} alt={client.name} className="max-w-full max-h-full object-contain" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} loading="lazy" />
                   <span className="text-lg font-bold text-[var(--primary-color)] hidden">{client.name}</span>
                 </div>
@@ -57,19 +57,6 @@ function ClientsServed() {
             </div>
           </div>
         </div>
-
-        <style>{`
-          @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          @keyframes scroll-reverse {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
-          }
-          .animate-scroll { animation: scroll 20s linear infinite; }
-          .animate-scroll-reverse { animation: scroll-reverse 20s linear infinite; }
-        `}</style>
       </section>
     );
   } catch (error) {
