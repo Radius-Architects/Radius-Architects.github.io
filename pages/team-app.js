@@ -21,17 +21,17 @@ function TeamPage() {
   try {
     const leadership = [
       {
-        name: 'Rajesh Kumar',
-        title: 'Principal Architect & CEO',
-        image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
-        degree: 'M.Arch, MCGM Empaneled',
-        experience: '30+ years'
+        name: 'Mr. Tejas Shah',
+        title: 'Principal Engineer & Senior Consultant',
+        image: 'assets/team/tejas_shah.webp',
+        degree: 'B.E. Construction',
+        experience: '25+ years'
       },
       {
-        name: 'Priya Sharma',
-        title: 'Senior Architect, MHADA Empaneled',
+        name: 'Mrs. Gargi Denge Shah',
+        title: 'Company Owner',
         image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-        degree: 'B.Arch, MHADA Certified',
+        degree: 'B.A.',
         experience: '25+ years'
       }
     ];
@@ -66,10 +66,10 @@ function TeamPage() {
               <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 {leadership.map((member, idx) => (
                   <div key={idx} className="bg-white rounded-lg overflow-hidden shadow-md text-center p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                    <img src={member.image} alt={member.name} className="w-48 h-48 rounded-3xl mx-auto mb-6 object-cover transition-transform duration-300 hover:scale-105" loading="lazy" />
-                    <h3 className="text-2xl font-bold text-[var(--primary-color)] mb-2">{member.name}</h3>
-                    <p className="text-base text-[var(--secondary-color)] font-semibold mb-4">{member.title}</p>
-                    <div className="text-sm text-[var(--text-secondary)]">
+                    <img src={member.image} alt={member.name} className="w-80 h-80 rounded-3xl mx-auto mb-6 object-cover transition-transform duration-300 hover:scale-105" loading="lazy" />
+                    <h3 className="text-3xl font-bold text-[var(--primary-color)] mb-2">{member.name}</h3>
+                    <p className="text-lg text-[var(--secondary-color)] font-semibold mb-4">{member.title}</p>
+                    <div className="text-base text-[var(--text-secondary)]">
                       <p>{member.degree}</p>
                       <p>{member.experience} experience</p>
                     </div>
