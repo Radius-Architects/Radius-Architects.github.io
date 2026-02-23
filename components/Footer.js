@@ -73,7 +73,7 @@ function Footer() {
                 ></iframe>
               </div>
               <a
-                href="https://www.google.com/maps/dir//Vile+Parle+East,+Mumbai,+Maharashtra"
+                href="https://www.google.com/maps/dir//Shyam+Kamal+C+Bldg,+27,+Tejpal+Rd,+near+Manoj+Ornaments+Private+Limited,+Agarwal+Market,+Park+Road,+Vile+Parle,+Mumbai,+Maharashtra+400057/@19.1008782,72.8432026,17z/data=!4m17!1m8!3m7!1s0x3be7c9b420d025dd:0xadc7429aa5547855!2sShyam+Kamal+C+Bldg,+27,+Tejpal+Rd,+near+Manoj+Ornaments+Private+Limited,+Agarwal+Market,+Park+Road,+Vile+Parle,+Mumbai,+Maharashtra+400057!3b1!8m2!3d19.1008731!4d72.8457775!16s%2Fg%2F11cs7mt3ns!4m7!1m0!1m5!1m1!1s0x3be7c9b420d025dd:0xadc7429aa5547855!2m2!1d72.8457775!2d19.1008731?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary-color)] hover:text-[var(--secondary-color)] transition-colors duration-300"
