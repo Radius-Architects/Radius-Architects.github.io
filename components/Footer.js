@@ -130,7 +130,7 @@ function Footer() {
         <button
           onClick={scrollToTop}
           aria-label="Scroll to top"
-          className={`z-80 fixed bottom-8 right-8 bg-[var(--primary-color)] text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-opacity duration-300 cursor-pointer ${showScroll ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          className={`z-40 fixed bottom-8 right-8 bg-[var(--primary-color)] text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-opacity duration-300 cursor-pointer ${showScroll ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
           <span className="icon-arrow-up text-2xl!"></span>
         </button>
