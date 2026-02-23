@@ -68,7 +68,7 @@ function ContactForm() {
 
           <div className="grid lg:grid-cols-5 gap-0 items-stretch">
             {/* Left - Contact Info Card */}
-            <div className="lg:col-span-2 bg-[var(--primary-color)] rounded-2xl lg:rounded-r-none p-10 text-white relative overflow-hidden">
+            <div className="lg:col-span-2 bg-[var(--primary-color)] rounded-b-2xl rounded-t-none lg:rounded-2xl lg:rounded-r-none p-10 text-white relative overflow-hidden order-2 lg:order-none">
               {/* Decorative circles inside card */}
               <div className="absolute -bottom-16 -right-16 w-48 h-48 border border-white border-opacity-10 rounded-full"></div>
               <div className="absolute -bottom-8 -right-8 w-32 h-32 border border-white border-opacity-10 rounded-full"></div>
@@ -107,7 +107,7 @@ function ContactForm() {
             </div>
 
             {/* Right - Form Card */}
-            <div className="lg:col-span-3 bg-white rounded-2xl lg:rounded-l-none shadow-xl p-10">
+            <div className="lg:col-span-3 bg-white rounded-t-2xl rounded-b-none lg:rounded-2xl lg:rounded-l-none shadow-xl p-10 order-1 lg:order-none">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center h-full py-12 animate-cf-fade-in">
                   <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-6 animate-cf-scale-in">
