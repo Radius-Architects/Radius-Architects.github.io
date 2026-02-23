@@ -1,5 +1,25 @@
 function Footer() {
   try {
+    // state for showing the scroll-to-top button
+    const [showScroll, setShowScroll] = React.useState(false);
+
+    // show button when user scrolls down a bit
+    React.useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 200) {
+          setShowScroll(true);
+        } else {
+          setShowScroll(false);
+        }
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     const services = [
       { title: 'Project Management', idx: 0 },
       { title: 'Construction Management', idx: 1 },
@@ -14,10 +34,11 @@ function Footer() {
     const linkClass = "block text-gray-600 hover:text-[var(--secondary-color)] transition-all duration-300 hover:translate-x-1 text-sm";
 
     return (
-      <footer className="bg-[var(--background-third)]" data-name="footer" data-file="components/Footer.js">
+      <>
+        <footer className="bg-[var(--background-third)]" data-name="footer" data-file="components/Footer.js">
 
-        {/* Main Footer Content */}
-        <div className="mx-auto px-4 sm:px-6 lg:px-36 pt-12 pb-6">
+          {/* Main Footer Content */}
+          <div className="mx-auto px-4 sm:px-6 lg:px-36 pt-12 pb-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
             {/* Column 1: Brand + Authorities */}
             <div className="lg:col-span-1">
@@ -104,6 +125,16 @@ function Footer() {
           </div>
         </div>
       </footer>
+
+        {/* scroll-to-top button */}
+        <button
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+          className={`z-80 fixed bottom-8 right-8 bg-[var(--primary-color)] text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-opacity duration-300 cursor-pointer ${showScroll ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        >
+          <span className="icon-arrow-up text-2xl!"></span>
+        </button>
+      </>
     );
   } catch (error) {
     console.error('Footer component error:', error);
