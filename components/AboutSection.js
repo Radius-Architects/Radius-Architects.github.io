@@ -26,7 +26,7 @@ function AboutSection() {
               
               <div className="space-y-4">
                 <div className="flex items-start space-x-4 group">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[var(--background-secondary)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-[var(--primary-color)] to-[var(--secondary-color)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                     <div className="icon-shield-check text-xl text-[var(--background)]"></div>
                   </div>
                   <div>
@@ -36,7 +36,7 @@ function AboutSection() {
                 </div>
 
                 <div className="flex items-start space-x-4 group">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[var(--background-secondary)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-[var(--primary-color)] to-[var(--secondary-color)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                     <div className="icon-users text-xl text-[var(--background)]"></div>
                   </div>
                   <div>
@@ -46,7 +46,7 @@ function AboutSection() {
                 </div>
 
                 <div className="flex items-start space-x-4 group">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[var(--background-secondary)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-[var(--primary-color)] to-[var(--secondary-color)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                     <div className="icon-clock text-xl text-[var(--background)]"></div>
                   </div>
                   <div>
