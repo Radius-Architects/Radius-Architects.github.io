@@ -16,6 +16,10 @@
 }
 
 @layer base {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-color) transparent;
+    }
     body {
         font-family: 'Lato', sans-serif;
         color: var(--text-primary);
