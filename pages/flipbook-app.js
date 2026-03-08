@@ -19,32 +19,54 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+const PageCover = React.forwardRef((props, ref) => {
+    return (
+    <div className="page page-cover" ref={ref} data-density="hard">
+        <div className="page-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>
+            {props.children}
+        </div>
+    </div>
+    );
+});
+
+const Page = React.forwardRef((props, ref) => {
+    return (
+    <div className="page" ref={ref}>
+        <div className="page-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        {/* <h2 className="page-header">Page header - {props.number}</h2> */}
+        <div className="page-image" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {props.imageChildren}
+        </div>
+        <div className="page-text">{props.children}</div>
+        {/* <div className="page-footer">{props.number + 1}</div> */}
+        </div>
+    </div>
+    );
+});
+
 function MyBook(props) {
     try {
-        const PageCover = React.forwardRef((props, ref) => {
-            return (
-            <div className="page page-cover" ref={ref} data-density="hard">
-                <div className="page-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>
-                    {props.children}
-                </div>
-            </div>
-            );
-        });
-        
-        const Page = React.forwardRef((props, ref) => {
-            return (
-            <div className="page" ref={ref}>
-                <div className="page-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                {/* <h2 className="page-header">Page header - {props.number}</h2> */}
-                <div className="page-image" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {props.imageChildren}
-                </div>
-                <div className="page-text">{props.children}</div>
-                {/* <div className="page-footer">{props.number + 1}</div> */}
-                </div>
-            </div>
-            );
-        });
+        const [controlsVisible, setControlsVisible] = React.useState(false);
+        const hideTimerRef = React.useRef(null);
+
+        const showControls = React.useCallback(() => {
+            setControlsVisible(true);
+            if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+            hideTimerRef.current = setTimeout(() => setControlsVisible(false), 3000);
+        }, []);
+
+        React.useEffect(() => {
+            const handleActivity = () => showControls();
+            window.addEventListener('mousemove', handleActivity);
+            window.addEventListener('touchstart', handleActivity);
+            window.addEventListener('touchmove', handleActivity);
+            return () => {
+                window.removeEventListener('mousemove', handleActivity);
+                window.removeEventListener('touchstart', handleActivity);
+                window.removeEventListener('touchmove', handleActivity);
+                if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+            };
+        }, [showControls]);
 
         
 
@@ -295,7 +317,8 @@ function MyBook(props) {
                 </HTMLFlipBook>
                 
                 {/* Fullscreen Button */}
-                <div className="fixed bottom-4 right-4 text-white bg-black bg-opacity-50 px-3 py-4 rounded-full z-50">
+                <div className="fixed bottom-4 right-4 text-white bg-black bg-opacity-50 px-3 py-4 rounded-full z-50"
+                    style={{ transition: 'opacity 0.3s ease', opacity: controlsVisible ? 1 : 0, pointerEvents: controlsVisible ? 'auto' : 'none' }}>
                     <button onClick={() => {
                         if (!document.fullscreenElement) {
                             document.documentElement.requestFullscreen();
@@ -308,12 +331,14 @@ function MyBook(props) {
                 </div>
                 
                 {/* Navigation Buttons */}
-                <div className="fixed top-1/2 left-4 text-white bg-black bg-opacity-50 px-3 py-4 rounded-full z-50 transform -translate-y-1/2">
+                <div className="fixed top-1/2 left-4 text-white bg-black bg-opacity-50 px-3 py-4 rounded-full z-50 transform -translate-y-1/2"
+                    style={{ transition: 'opacity 0.3s ease', opacity: controlsVisible ? 1 : 0, pointerEvents: controlsVisible ? 'auto' : 'none' }}>
                     <button onClick={() => this.pageFlip.pageFlip().flipPrev()} className="cursor-pointer px-2 py-0">
                         <span className="icon-arrow-left text-3xl!"></span>
                     </button>
                 </div>
-                <div className="fixed top-1/2 right-4 text-white bg-black bg-opacity-50 px-3 py-4 rounded-full z-50 transform -translate-y-1/2">
+                <div className="fixed top-1/2 right-4 text-white bg-black bg-opacity-50 px-3 py-4 rounded-full z-50 transform -translate-y-1/2"
+                    style={{ transition: 'opacity 0.3s ease', opacity: controlsVisible ? 1 : 0, pointerEvents: controlsVisible ? 'auto' : 'none' }}>
                     <button onClick={() => this.pageFlip.pageFlip().flipNext()} className="cursor-pointer px-2 py-0">
                         <span className="icon-arrow-right text-3xl!"></span>
                     </button>
