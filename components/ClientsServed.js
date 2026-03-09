@@ -19,7 +19,7 @@ function ClientsServed() {
       { name: 'Lotus Developers', image: 'https://assets-netstorage.groww.in/stocks-ipo/logos/SriLotusDevelopersRealtyLtd_58377396_94305.png' },
       { name: 'Kalpataru Developers', image: 'https://cdn.brandfetch.io/idGdvjS8kO/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1767143324011' },
       { name: 'Prestige Group', image: 'https://d1t2fddy6amcvs.cloudfront.net/images/logo.svg' },
-      { name: 'Hiranandani Group', image: 'https://www.hiranandani.com/img/Hiranandani-logo.png' },
+      { name: 'Hiranandani Group', image: 'assets/logos/Hiranandani-logo.webp' },
       { name: 'K Raheja Corp', image: 'https://iconlogovector.com/uploads/images/2025/11/lg-6916615554b5f-K-Raheja-Corp.webp' },
       { name: 'Mahindra Life Spaces', image: 'https://mldlprodstorage.blob.core.windows.net/live/2022/10/mahindra_logo_new_horizontal-scaled.webp' },
       { name: 'Sugee Developers', image: 'https://static.wixstatic.com/media/3241d3_c3c4bc63abc748b2930a326cb9e40a19~mv2.png/v1/fill/w_110,h_53,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Sugee%20Logo_Register_1-08.png' },
